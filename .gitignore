@@ -1,0 +1,8 @@
+config.py
+replication_scripts/config.py
+*.token
+.env
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo

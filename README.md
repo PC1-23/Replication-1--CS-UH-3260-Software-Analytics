@@ -44,17 +44,27 @@ notes/                    # Optional if you have any notes you took during repro
 
 **For each folder and file, provide a brief description of what it contains.**
 
+
 ### 3. Setup Instructions
 
-- **Prerequisites**: Required software, tools, and versions
-  - OS requirements
-  - Programming language versions (Python, R, etc.)
-  - Required packages/libraries and versions
-  - Any other dependencies
-- **Installation Steps**: Step-by-step instructions to set up the environment
-  - How to install dependencies
-  - How to configure paths or settings
-  - Any environment variables needed
+### What you need:
+- Python 3.7+
+- GitHub account
+
+### Setup:
+
+1. Clone this repo
+2. Install requests: `pip install requests`
+3. Get a GitHub token from https://github.com/settings/tokens (needs `public_repo` scope)
+4. Create `replication_scripts/config.py` with your token:
+```python
+   GITHUB_TOKEN = 'ghp_yourTokenHere'
+```
+5. Run the script:
+```bash
+   cd replication_scripts
+   python3 collect_new_prs.py
+```
 
 ### 4. GenAI Usage
 
