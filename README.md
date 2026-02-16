@@ -1,10 +1,10 @@
 <p style="border:1px; border-style:solid; border-color:black; padding: 1em;">
 CS-UH 3260 Software Analytics<br/>
-Replication Study Guidelines<br/>
-Dr. Sarah Nadi, NYUAD
+Replication Study 1<br/>
+Pragya Chapagain and Pavel Nikolaitchev, NYUAD
 </p>
 
-# Replication Repository README Template -- CS-UH-3260 Software Analytics
+# Replication Repository 1 README -- CS-UH-3260 Software Analytics
 
 
 ## Overview
@@ -18,9 +18,9 @@ Your repository README should include the following sections:
 
 ### 1. Project Title and Overview
 
-- **Paper Title**: [Full title of the replicated paper]
-- **Authors**: [Original paper authors]
-- **Replication Team**: [Your team members' names]
+- **Paper Title**: [How do Developers Improve Code Readability? An Empirical Study of Pull Requests]
+- **Authors**: [Anonymous]
+- **Replication Team**: [Pragya Chapagain and Pavel Nikolaitchev]
 - **Course**: CS-UH 3260 Software Analytics, NYUAD
 - **Brief Description**: 
   - 2-3 sentences summarizing what the original paper is about
