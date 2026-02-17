@@ -53,10 +53,8 @@ logs/                     # Console outputs screenshot from running collect_new_
   - Also contains notes on RQ2 replication scripts used.
 
 - outputs/
-
-  - Classification results and distribution analysis will be added here.
   - new_prs_2021_2026.csv - New pull requests collected from 5 selected repositories for the period 2021-2026. Mined using the same keyword search methodology as the original study. Contains PR number, URL, title, body, merge date, author, merged by, matched keywords, commit messages, and comments.
-  - Classified Selected New PR's.xlsx - contains manually labeled classification according to original authors' taxonomy for newest PR's. The 15 newest representative PR's were selected, the amount is based on relative number (109 repos vs 5 repos we selected is around 4%, same applied to the PR's), addionally contains pivot table to count the classified results into table similar to Table 1 in original paper.
+  - Classified Selected New PR's.xlsx - contains manually labeled classification according to original authors' taxonomy for newest PR's. The 15 newest representative PR's were selected, the amount is based on relative number (109 repos vs 5 repos we selected is around 4%, same applied to the PR's), addionally contains pivot table to count the classified results into table similar to Table 1 in original paper for distribution analysis.
 
 - logs/
 
