@@ -44,22 +44,26 @@ logs/                     # Console outputs screenshot from running collect_new_
 - datasets/
 
   - 10_sampled_prs.xlsx - Random sample of 10 PRs from the original authors' dataset used for manual classification validation (RQ1 replication).
+  - Selected Merged PRs with code readabiliy improvements (copy).csv - slightly modified dataset of selected PR's, cleaned up data that causes errors in processing in original authors' scripts. More details on process and reasons behind cleaning up can be found in notes regarding RQ2 replication.
+  - Classified Selected New PR's.xlsx - contains manually labeled classification according to original authors' taxonomy for newest PR's. The 15 newest representative PR's were selected, the amount is based on relative number (109 repos vs 5 repos we selected is around 4%, same applied to the PR's), addionally contains pivot table to count the classified results into table similar to Table 1 in original paper.
 
 - replication_scripts/
 
   - collect_new_prs.py - New script written to collect readability related PRs from 5 selected repositories for the period 2021-2026. Adapted from the authors' original importPullRequests.py. Uses the same GitHub GraphQL API, same 8 readability keywords, and same search filters (is:pr is:merged review:approved), but outputs directly to CSV instead of storing in a MySQL database.
+  - Also contains notes on RQ2 replication scripts used.
 
 - outputs/
 
   - Classification results and distribution analysis will be added here.
   - new_prs_2021_2026.csv - New pull requests collected from 5 selected repositories for the period 2021-2026. Mined using the same keyword search methodology as the original study. Contains PR number, URL, title, body, merge date, author, merged by, matched keywords, commit messages, and comments.
+  - Classified Selected New PR's.xlsx - contains manually labeled classification according to original authors' taxonomy for newest PR's. The 15 newest representative PR's were selected, the amount is based on relative number (109 repos vs 5 repos we selected is around 4%, same applied to the PR's), addionally contains pivot table to count the classified results into table similar to Table 1 in original paper.
 
 - logs/
 
   -  Screenshots and console output from data collection runs (collect_new_prs.py).
 
 - notes/
-
+  - RQ2Replication.md - contains info on how RQ2 was reproduced on original dataset.
 
 ### 3. Setup Instructions
 
@@ -89,6 +93,8 @@ logs/                     # Console outputs screenshot from running collect_new_
   - Understanding the original authors' script (importPullRequests.py) - Claude helped explain the MySQL database structure, GraphQL API queries, and the overall data collection workflow
   - Debugging - Claude assisted with Git issues (token security, .gitignore setup, staging files) and Python errors during script development
   - Understanding the GraphQL API when writing new script
+  - Resolving compatibility issues with the pipeline - OpenAI ChatGPT helped to resolve some of the compatibility issues due to using Windows OS on host machine and newer Java version (Java 21 vs Java 11)
+  - Running the script - AI was used to find out how to run the Step 4.2 script to reproduce the RQ2, as it turned out to be a Java Application and not a Test.
 
 
 ## Grading Criteria for README
