@@ -58,6 +58,8 @@ logs/                     # Console outputs screenshot from running collect_new_
 
   -  Screenshots and console output from data collection runs (collect_new_prs.py).
 
+- notes/
+
 
 ### 3. Setup Instructions
 
