@@ -18,31 +18,45 @@ Your repository README should include the following sections:
 
 ### 1. Project Title and Overview
 
-- **Paper Title**: [How do Developers Improve Code Readability? An Empirical Study of Pull Requests]
-- **Authors**: [Anonymous]
-- **Replication Team**: [Pragya Chapagain and Pavel Nikolaitchev]
+- **Paper Title**: How do Developers Improve Code Readability? An Empirical Study of Pull Requests
+- **Authors**: Anonymous 1, Anonymous 2, Anonymous 3
+- **Replication Team**: Pragya Chapagain and Pavel Nikolaitchev
 - **Course**: CS-UH 3260 Software Analytics, NYUAD
 - **Brief Description**: 
-  - 2-3 sentences summarizing what the original paper is about
-  - 2-3 sentences summarizing what this replication study does
+  - The original paper studies how developers improve code readability through pull requests in open-source Java projects. The authors mined 109 GitHub repositories, identified readability-related PRs using keyword search, and manually classified them into a taxonomy of improvement types to understand what kinds of readability changes developers make and accept. The study also contrasts developer intended readability improvements with SonarQube detected issues, concluding that many practical readability changes are not fully captured by existing static analysis rules.
+  - This replication study validates the original authors' methodology by manually classifying a random sample of 10 PRs from their dataset (RQ1) and running their SonarQube analysis (RQ2). We also extend the study by collecting new PRs from 2021-2026 across 5 selected repositories to analyze how the distribution of readability improvement types has changed over time compared to the original study period.
 
 ### 2. Repository Structure
 
 Document your repository structure clearly. Organize your repository using the following standard structure:
 
 ```
-README                    # Documentation for your repository
-datasets/                 # Subset of data you used (if any). If you used the whole dataset, include instructions on how to download it
-replication_scripts/      # Scripts used in your replication:
-                          #   - If you used scripts as-is: document which scripts you ran
-                          #   - If you modified scripts: include the modified scripts
-                          #   - If you created new scripts: include all new scripts
-outputs/                  # Your generated results only
-logs/                     # Console output, errors, screenshots
-notes/                    # Optional if you have any notes you took during reproduction (E.g., where you noted discrepencies etc)
+README                    # This file
+datasets/                 # Data used in the replication
+replication_scripts/      # Scripts used for data collection (created new script)
+outputs/                  # Classification results and analysis
+logs/                     # Console outputs screenshot from running collect_new_prs.py
+
 ```
 
 **For each folder and file, provide a brief description of what it contains.**
+
+- datasets/
+
+  - 10_sampled_prs.xlsx - Random sample of 10 PRs from the original authors' dataset used for manual classification validation (RQ1 replication).
+
+- replication_scripts/
+
+  - collect_new_prs.py - New script written to collect readability related PRs from 5 selected repositories for the period 2021-2026. Adapted from the authors' original importPullRequests.py. Uses the same GitHub GraphQL API, same 8 readability keywords, and same search filters (is:pr is:merged review:approved), but outputs directly to CSV instead of storing in a MySQL database.
+
+- outputs/
+
+  - Classification results and distribution analysis will be added here.
+  - new_prs_2021_2026.csv - New pull requests collected from 5 selected repositories for the period 2021-2026. Mined using the same keyword search methodology as the original study. Contains PR number, URL, title, body, merge date, author, merged by, matched keywords, commit messages, and comments.
+
+- logs/
+
+  -  Screenshots and console output from data collection runs (collect_new_prs.py).
 
 
 ### 3. Setup Instructions
@@ -70,9 +84,9 @@ notes/                    # Optional if you have any notes you took during repro
 
 **GenAI Usage**: Briefly document any use of generative AI tools (e.g., ChatGPT, GitHub Copilot, Cursor) during the replication process. Include:
 
-  - Which tools were used
-  - How they were used (e.g., understanding scripts, exploring datasets, understanding data fields, debugging)
-  - Brief description of the assistance provided
+  - Understanding the original authors' script (importPullRequests.py) - Claude helped explain the MySQL database structure, GraphQL API queries, and the overall data collection workflow
+  - Debugging - Claude assisted with Git issues (token security, .gitignore setup, staging files) and Python errors during script development
+  - Understanding the GraphQL API when writing new script
 
 
 ## Grading Criteria for README
